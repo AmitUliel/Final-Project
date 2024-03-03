@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class root_calculator {
 	static WebDriver browser;
@@ -14,8 +15,12 @@ public class root_calculator {
 	@Before
 	public void setup() 
 	{
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\amit1\\OneDrive\\Documents\\Study\\שנה ג\\אבטחת איכות תוכנה\\geckodriver\\geckodriver.exe");
-		browser = new FirefoxDriver();
+		System.setProperty("webdriver.gecko.driver", "C:\\selenium webdriver\\FirefoxDriver\\geckodriver.exe");
+		
+		FirefoxOptions options = new FirefoxOptions();
+		options.setBinary("C:\\Program Files\\Mozilla Firefox\\Firefox.exe");
+		
+		browser = new FirefoxDriver(options);
 		browser.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		String url = "https://www.mathportal.org/calculators/polynomials-solvers/polynomial-roots-calculator.php";
 		browser.get(url);

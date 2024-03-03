@@ -11,6 +11,7 @@ import java.time.Duration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import static org.junit.Assert.assertNotEquals;
 
@@ -24,8 +25,12 @@ public class AppTest {
 	@Before
 	public void setup() 
 	{
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\amit1\\OneDrive\\Documents\\Study\\שנה ג\\אבטחת איכות תוכנה\\geckodriver\\geckodriver.exe");
-		browser = new FirefoxDriver();
+		System.setProperty("webdriver.gecko.driver", "C:\\selenium webdriver\\FirefoxDriver\\geckodriver.exe");
+		
+		FirefoxOptions options = new FirefoxOptions();
+		options.setBinary("C:\\Program Files\\Mozilla Firefox\\Firefox.exe");
+		
+		browser = new FirefoxDriver(options);
 		browser.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		browser.get("https://testpages.eviltester.com/styled/validation/input-validation.html");
 	}

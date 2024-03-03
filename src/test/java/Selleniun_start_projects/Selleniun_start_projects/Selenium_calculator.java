@@ -10,6 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+
 import java.lang.System;
 
 public class Selenium_calculator {
@@ -19,8 +21,12 @@ public class Selenium_calculator {
 	@Before
 	public void setup() 
 	{
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\amit1\\OneDrive\\Documents\\Study\\שנה ג\\אבטחת איכות תוכנה\\geckodriver\\geckodriver.exe");
-		browser = new FirefoxDriver();
+		System.setProperty("webdriver.gecko.driver", "C:\\selenium webdriver\\FirefoxDriver\\geckodriver.exe");
+		
+		FirefoxOptions options = new FirefoxOptions();
+		options.setBinary("C:\\Program Files\\Mozilla Firefox\\Firefox.exe");
+		
+		browser = new FirefoxDriver(options);
 		browser.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		String url = "https://testpages.eviltester.com/styled/apps/calculator.html";
 		browser.get(url);
