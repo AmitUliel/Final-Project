@@ -22,7 +22,6 @@ public class SelleninumTesting_2 {
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\amit1\\OneDrive\\Documents\\Study\\שנה ג\\אבטחת איכות תוכנה\\geckodriver");
 		browser = new FirefoxDriver();
 		browser.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
-
 		browser.get("https://testpages.eviltester.com/styled/validation/input-validation.html");
 	}
 
