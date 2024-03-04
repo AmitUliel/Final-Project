@@ -46,7 +46,7 @@ public class PasswordValidation {
 		assertEquals(result, expected);
 	}
 	
-	// too short
+	// password too short
 	@Test
 	public void Tests2() 
 	{
@@ -60,7 +60,7 @@ public class PasswordValidation {
 		assertEquals(result, expected);
 	}
 	
-	// too long
+	// password too long
 	@Test
 	public void Tests3() 
 	{
@@ -74,7 +74,7 @@ public class PasswordValidation {
 		assertEquals(result, expected);
 	}
 
-	// just right
+	// password just right
 	@Test
 	public void Tests4() 
 	{
