@@ -88,9 +88,23 @@ public class PasswordValidation {
 		assertEquals(result, expected);
 	}
 	
-	// same character 7 times
+	// password just right 2 - without a symbol
 	@Test
 	public void Tests5() 
+	{
+		WebElement textBox = browser.findElement(By.name("characters"));
+		textBox.sendKeys("gfthRyt");
+		browser.findElement(By.name("validate")).click();
+		
+		String result = browser.findElement(By.name("validation_message")).getAttribute("value");
+		String expected = "Valid Value";
+		
+		assertEquals(result, expected);
+	}
+	
+	// same character 7 times - Valid
+	@Test
+	public void Tests6() 
 	{
 		WebElement textBox = browser.findElement(By.name("characters"));
 		textBox.sendKeys("*******");
@@ -98,6 +112,20 @@ public class PasswordValidation {
 		
 		String result = browser.findElement(By.name("validation_message")).getAttribute("value");
 		String expected = "Valid Value";
+		
+		assertEquals(result, expected);
+	}
+	
+	// same character 7 times - Invalid
+	@Test
+	public void Tests7() 
+	{
+		WebElement textBox = browser.findElement(By.name("characters"));
+		textBox.sendKeys("!!!!!!!");
+		browser.findElement(By.name("validate")).click();
+		
+		String result = browser.findElement(By.name("validation_message")).getAttribute("value");
+		String expected = "Invalid Value";
 		
 		assertEquals(result, expected);
 	}
